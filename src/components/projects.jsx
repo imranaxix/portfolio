@@ -83,7 +83,7 @@ const Projects = ({ darkmode }) => {
       });
     });
     return Array.from(tags);
-  }, []);
+  }, [myProjects]);
 
   const filteredProjects = useMemo(() => {
     if (selectedTags.has('All')) return myProjects;
