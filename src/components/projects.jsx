@@ -151,7 +151,9 @@ const Projects = ({ darkmode }) => {
           <div className='w-full sm:w-[320px] md:w-[350px] lg:w-[360px] mx-auto mb-6' key={index}>
             <div className={`rounded-xl ${darkmode ? 'bg-[#1c1e21]' : 'bg-[#f0f0f0]'} shadow-md`}>
               <div className='bg-black flex justify-center rounded-t-2xl overflow-hidden'>
-                <img src={project.image} className='h-[180px] w-full object-cover' alt={project.name} />
+              <a href={project.lpSource} target="_blank" rel="noreferrer" className='ml-2 cursor-pointer hover:underline'>
+              <img src={project.image} className='h-[180px] w-full object-cover' alt={project.name} />
+              </a>
               </div>
               <div className='px-4 py-4'>
                 <h2 className='font-semibold text-lg ubuntu-regular'>{project.name}</h2>
