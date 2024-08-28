@@ -18,9 +18,9 @@ const Footer = ({darkmode}) => {
       </div>
       <div className=''>
       <div className='grid grid-cols-4 gap-3 lg:mt-0 mt-5 lg:ml-0 ml-[-40px] text-lg'>
-        <a href="https://www.linkedin.com/in/imran-aziz-0764b6301" target="_blank" rel="noreferrer"><ion-icon name="logo-linkedin" ></ion-icon></a>
+        <a href="https://www.linkedin.com/in/imran-aziz-29740b324/" target="_blank" rel="noreferrer"><ion-icon name="logo-linkedin" ></ion-icon></a>
         <a href="https://api.whatsapp.com/send?phone=92 3244439 186" target="_blank" rel="noreferrer"><ion-icon name="logo-whatsapp"></ion-icon></a>
-        <a href="https://www.instagram.com/tech_imran09/" target="_blank" rel="noreferrer"><ion-icon name="logo-instagram"></ion-icon></a>
+        <a href="https://www.youtube.com/@codeKhana01/" target="_blank" rel="noreferrer"><ion-icon name="logo-youtube"></ion-icon></a>
         <a href="https://github.com/imranaxix" target="_blank" rel="noreferrer"><ion-icon name="logo-github"></ion-icon></a>
       </div>
        </div>

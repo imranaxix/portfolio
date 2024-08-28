@@ -33,20 +33,20 @@ const Navbar = ({ darkMode, handleThemeChange }) => {
 
   return (
     <div className=' w-full fixed top-0 left-0 z-20 select-none'>
-      <div className={`md:flex items-center justify-between py-5 shadow-md rounded-t-3xl md:pr-10 md:pl-20 px-5 mx-auto duration-75  ease-in ${darkMode ? 'bg-[#1c1e21]' : 'bg-[#f0f0f0]'}`}>
+      <div className={`lg:flex items-center justify-between py-5 shadow-md rounded-t-3xl md:pr-10 md:pl-20 px-5 mx-auto duration-75  ease-in ${darkMode ? 'bg-[#1c1e21]' : 'bg-[#f0f0f0]'}`}>
       <h1 className='text-[#0fa41b] text-2xl font-bold tauri-regular cursor-pointer' onClick={scrollToTop} id='home'>&lt;I<span className={`${darkMode?'text-[#fff]':'text-black'}`}>mran</span>/&gt;</h1>
       <div
           onClick={() => setOpen(!open)}
-          className={`text-3xl absolute right-6 top-6 cursor-pointer md:hidden }`}
+          className={`text-3xl absolute right-6 top-6 cursor-pointer lg:hidden }`}
         >
           <ion-icon name={open ? 'close' : 'menu'}></ion-icon>
         </div> 
       <div className='flex justify-between'>
-        <ul className={`md:flex md:items-center justify-end select-none md:pb-0 pb-12 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-12 duration-75 ease-in ${
+        <ul className={`lg:flex lg:items-center justify-end select-none lg:pb-0 pb-12 absolute lg:static lg:z-auto z-[-1] left-0 w-full lg:w-auto lg:pl-0 pl-12 duration-75 ease-in ${
               open ? 'top-16 opacity-100' : 'top-[-490px]'
             } md:opacity-100 opacity-0 ${darkMode?'bg-[#1c1e21] ' : 'bg-[#f0f0f0]'}`}>
           {Navlinks.map((Navlink) => (
-            <li key={Navlink.id} className='mx-5 cursor-pointer text-base font-semibold md:ml-8  md:my-0 my-7 transition duration-100 ease-in'>
+            <li key={Navlink.id} className='mx-5 cursor-pointer text-base font-semibold lg:ml-8  lg:my-0 my-7 transition duration-100 ease-in'>
               <span onClick={() => scrollToSection(Navlink.id)} className={`${darkMode?'text-white':'text-black'} transition-all hover:text-[#0fa41b]`}>{Navlink.name}</span>
             </li>
           ))}

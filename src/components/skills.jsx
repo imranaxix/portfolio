@@ -11,8 +11,8 @@ const Skills = ({darkmode}) => {
         <i className="devicon-css3-plain-wordmark colored absolute left-[20%] md:left-[30%] bottom-[40%] md:bottom-[35%] z-10"></i>
         <i className="devicon-javascript-plain colored absolute md:left-[40%] left-[41%] bottom-[10%] md:bottom-[45%] z-10"></i>
         <i className="devicon-react-original-wordmark colored absolute right-[41%] md:right-[40%] md:bottom-[45%] bottom-[50%] z-10"></i>
-        <i className="devicon-tailwindcss-original colored absolute right-[20%] md:right-[30%] bottom-[40%] md:bottom-[35%] z-10"></i>
-        <i className="devicon-bootstrap-plain-wordmark colored absolute right-[20%]  md:bottom-[20%] bottom-[25%] z-10"></i>
+        <i className="devicon-vuejs-plain-wordmark colored absolute right-[20%] md:right-[30%] bottom-[40%] md:bottom-[35%] z-10"></i>
+        <i className="devicon-tailwindcss-original colored absolute right-[20%]  md:bottom-[20%] bottom-[25%] z-10"></i>
       </div>
     </div>
   );
