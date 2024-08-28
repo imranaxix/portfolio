@@ -11,7 +11,7 @@ const Projects = ({ darkmode }) => {
   const [expandedProjects, setExpandedProjects] = useState({});
   const [selectedTags, setSelectedTags] = useState(new Set(['All']));
 
-  const myProjects = [
+  const myProjects = useMemo(() =>[
     { 
       name: 'Fast Food Website',
       image: project1,
@@ -73,7 +73,7 @@ const Projects = ({ darkmode }) => {
       lpSource: 'https://imranaxix.github.io/portfolio/',
       codeSource: 'https://github.com/imranaxix/portfolio',
     },
-  ];
+  ],[]);
 
   const allTags = useMemo(() => {
     const tags = new Set(['All']);
@@ -83,14 +83,14 @@ const Projects = ({ darkmode }) => {
       });
     });
     return Array.from(tags);
-  }, [myProjects]);
+  }, [myProjects]);  // Include `myProjects` in the dependency array
 
   const filteredProjects = useMemo(() => {
     if (selectedTags.has('All')) return myProjects;
     return myProjects.filter(project =>
       [project.tag1, project.tag2, project.tag3, project.tag4].some(tag => selectedTags.has(tag))
     );
-  }, [selectedTags, myProjects]);
+  }, [selectedTags, myProjects]);  // Include `selectedTags` and `myProjects` in the dependency array
 
   const handleTagToggle = (tag) => {
     setSelectedTags(prev => {
