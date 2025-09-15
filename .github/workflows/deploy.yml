@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # or the branch you want to deploy from
+      - main  # deploy when pushing to main
 
 jobs:
   deploy:
@@ -12,11 +12,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0   # important for pushing to gh-pages
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'  # specify the Node.js version you need
+          node-version: '20'
 
       - name: Install dependencies
         run: npm install
