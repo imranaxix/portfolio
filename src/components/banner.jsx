@@ -12,7 +12,9 @@ const Banner = () => {
       <div className='md:w-[100%] lg:w-[45%]  ubuntu-light'>
         <h2 className='text-3xl '>Hi, I'm</h2>
         <h1 className='text-7xl ubuntu-regular font-medium'>Imran Aziz</h1>
-        <h3 className='text-xl w-[100%] py-2'>A passionate <span className='text-[#0fa41b] ubuntu-regular'>&lt;front end developer/&gt;</span> dedicated to crafting responsive and user-friendly websites</h3>
+        <h3 className='text-xl w-[100%] py-2'>
+          A passionate <span className='text-[#0fa41b] ubuntu-regular'>&lt;software engineer/&gt;</span> skilled in full-stack development and game design, dedicated to creating dynamic and user-friendly experiences
+        </h3>
       </div>
     </div>
   );
