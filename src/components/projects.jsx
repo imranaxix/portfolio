@@ -22,6 +22,15 @@ const Projects = ({ darkmode }) => {
       tag2: 'TailwindCSS',
       tag3: 'Router',
     },
+    {
+      name: 'Hotdog Killer (Demo)',
+      para: 'A short horror demo made in Unity where you run a fast-food stall, serve customers, and discover the hidden serial killer.',
+      embed: `<iframe frameborder="0" src="https://itch.io/embed/3878673?border_width=0&amp;bg_color=000000&amp;fg_color=1c1e21&amp;link_color=1c1e21&amp;border_color=ffffff" width="206" height="165"><a href="https://imranaziz.itch.io/hotdogkiller">Hotdog Killer (Demo) by imranaziz</a></iframe>`,
+      tag1: 'Unity',
+      tag2: 'C#',
+      tag3: 'GameDev',
+      lpSource: 'https://imranaziz.itch.io/hotdogkiller',
+    },
     { 
       name: 'Movie Search App',
       image: project2,
@@ -83,14 +92,14 @@ const Projects = ({ darkmode }) => {
       });
     });
     return Array.from(tags);
-  }, [myProjects]);  // Include `myProjects` in the dependency array
+  }, [myProjects]);
 
   const filteredProjects = useMemo(() => {
     if (selectedTags.has('All')) return myProjects;
     return myProjects.filter(project =>
       [project.tag1, project.tag2, project.tag3, project.tag4].some(tag => selectedTags.has(tag))
     );
-  }, [selectedTags, myProjects]);  // Include `selectedTags` and `myProjects` in the dependency array
+  }, [selectedTags, myProjects]);
 
   const handleTagToggle = (tag) => {
     setSelectedTags(prev => {
@@ -151,9 +160,13 @@ const Projects = ({ darkmode }) => {
           <div className='w-full sm:w-[320px] md:w-[350px] lg:w-[360px] mx-auto mb-6' key={index}>
             <div className={`rounded-xl ${darkmode ? 'bg-[#1c1e21]' : 'bg-[#f0f0f0]'} shadow-md`}>
               <div className='bg-black flex justify-center rounded-t-2xl overflow-hidden'>
-              <a href={project.lpSource} target="_blank" rel="noreferrer" className='ml-2 cursor-pointer hover:underline'>
-              <img src={project.image} className='h-[180px] w-full object-cover' alt={project.name} />
-              </a>
+                {project.embed ? (
+                  <div dangerouslySetInnerHTML={{ __html: project.embed }} />
+                ) : (
+                  <a href={project.lpSource} target="_blank" rel="noreferrer" className='ml-2 cursor-pointer hover:underline'>
+                    <img src={project.image} className='h-[180px] w-full object-cover' alt={project.name} />
+                  </a>
+                )}
               </div>
               <div className='px-4 py-4'>
                 <h2 className='font-semibold text-lg ubuntu-regular'>{project.name}</h2>
@@ -173,20 +186,26 @@ const Projects = ({ darkmode }) => {
                   {project.tag4 && <span className={`${darkmode ? 'bg-[#121315]' : 'bg-[#fefefe]'} mr-2 px-2 py-1`}>{project.tag4}</span>}
                 </div>
 
-                <div className='flex justify-between items-center text-sm py-3'>
-                  <div className='flex items-center hover:text-[#0fa41b] transition-all'>
-                    <ion-icon name="eye-outline"></ion-icon>
-                    <a href={project.lpSource} target="_blank" rel="noreferrer" className='ml-2 cursor-pointer hover:underline'>
-                      Live Preview
-                    </a>
+                {(project.lpSource || project.codeSource) && (
+                  <div className='flex justify-between items-center text-sm py-3'>
+                    {project.lpSource && (
+                      <div className='flex items-center hover:text-[#0fa41b] transition-all'>
+                        <ion-icon name="eye-outline"></ion-icon>
+                        <a href={project.lpSource} target="_blank" rel="noreferrer" className='ml-2 cursor-pointer hover:underline'>
+                          Live Preview
+                        </a>
+                      </div>
+                    )}
+                    {project.codeSource && (
+                      <div className='flex items-center hover:text-[#0fa41b] transition-all'>
+                        <ion-icon name="logo-github"></ion-icon>
+                        <a href={project.codeSource} target="_blank" rel="noreferrer" className='ml-2 cursor-pointer hover:underline'>
+                          View Code
+                        </a>
+                      </div>
+                    )}
                   </div>
-                  <div className='flex items-center hover:text-[#0fa41b] transition-all'>
-                    <ion-icon name="logo-github"></ion-icon>
-                    <a href={project.codeSource} target="_blank" rel="noreferrer" className='ml-2 cursor-pointer hover:underline'>
-                      View Code
-                    </a>
-                  </div>
-                </div>
+                )}
               </div>
             </div>
           </div>
